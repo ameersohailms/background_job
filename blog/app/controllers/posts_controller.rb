@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
     "test   from main"
     "commit 2"
+    "commit 3"
     @posts = Post.all
   end
 
