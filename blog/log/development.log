@@ -5609,3 +5609,396 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 44ms (Views: 38.9ms | ActiveRecord: 0.4ms | Allocations: 59874)
 
 
+Started GET "/" for ::1 at 2022-12-09 17:03:50 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.5ms | Allocations: 272)
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 17866)
+  Rendered layout layouts/application.html.erb (Duration: 46.8ms | Allocations: 52802)
+Completed 200 OK in 55ms (Views: 48.5ms | ActiveRecord: 0.4ms | Allocations: 59579)
+
+
+Started GET "/posts/22" for ::1 at 2022-12-09 17:04:59 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:77:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1102)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 14799)
+Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 0.5ms | Allocations: 20997)
+
+
+Started GET "/posts/new" for ::1 at 2022-12-09 17:05:02 +0530
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 12.7ms | Allocations: 4052)
+  Rendered posts/new.html.erb within layouts/application (Duration: 16.6ms | Allocations: 4367)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 6652)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 7143)
+
+
+Started POST "/posts" for ::1 at 2022-12-09 17:05:06 +0530
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"sssssss", "body"=>"sssssssss"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:33:in `block in create'
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sssssss"], ["body", "sssssssss"], ["created_at", "2022-12-09 11:35:06.426256"], ["updated_at", "2022-12-09 11:35:06.426256"]]
+  ↳ app/controllers/posts_controller.rb:33:in `block in create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:33:in `block in create'
+[ActiveJob] Enqueued GuestsCleanupJob (Job ID: 7e0a7c88-77ba-4d46-8801-f97c6861ee7e) to Sidekiq(default) with arguments: #<GlobalID:0x00007fe674d7f340 @uri=#<URI::GID gid://blog/Post/23>>, ["ameersohailms@gmail.com", "ameer09981@gmail.com", "sumathichitra9597@gmail.com", "varijapatpal056@gmail.com", "varijapatpaljr@gmail.com"]
+Redirected to http://localhost:8000/posts/23
+Completed 302 Found in 13ms (ActiveRecord: 2.6ms | Allocations: 5447)
+
+
+Started GET "/posts/23" for ::1 at 2022-12-09 17:05:06 +0530
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"23"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:77:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered posts/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 754)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 3026)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.1ms | Allocations: 3937)
+
+
+Started GET "/posts/new" for ::1 at 2022-12-09 17:05:35 +0530
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.2ms | Allocations: 1277)
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1386)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 15184)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.5ms | Allocations: 18624)
+
+
+Started GET "/posts" for ::1 at 2022-12-09 17:05:37 +0530
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.2ms | Allocations: 33)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1215)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 3402)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.3ms | Allocations: 3803)
+
+
+Started GET "/posts/new" for ::1 at 2022-12-09 17:05:38 +0530
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.4ms | Allocations: 1019)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1104)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3278)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 3611)
+
+
+Started POST "/posts" for ::1 at 2022-12-09 17:05:41 +0530
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"sssssssssss", "body"=>"ssssssssssss"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:33:in `block in create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sssssssssss"], ["body", "ssssssssssss"], ["created_at", "2022-12-09 11:35:41.221693"], ["updated_at", "2022-12-09 11:35:41.221693"]]
+  ↳ app/controllers/posts_controller.rb:33:in `block in create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:33:in `block in create'
+[ActiveJob] Enqueued GuestsCleanupJob (Job ID: 0578f7be-825b-4ed9-9bdc-780ac1e95fbe) to Sidekiq(default) with arguments: #<GlobalID:0x00007fe674948b28 @uri=#<URI::GID gid://blog/Post/24>>, ["ameersohailms@gmail.com", "ameer09981@gmail.com", "sumathichitra9597@gmail.com", "varijapatpal056@gmail.com", "varijapatpaljr@gmail.com"]
+Redirected to http://localhost:8000/posts/24
+Completed 302 Found in 12ms (ActiveRecord: 3.3ms | Allocations: 3222)
+
+
+Started GET "/posts/24" for ::1 at 2022-12-09 17:05:41 +0530
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"24"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:77:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 708)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2974)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 4506)
+
+
+Started GET "/posts/24/edit" for ::1 at 2022-12-09 17:13:29 +0530
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:81:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.0ms | Allocations: 1375)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1715)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 15509)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.2ms | Allocations: 19788)
+
+
+Started GET "/posts" for ::1 at 2022-12-09 17:13:30 +0530
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.2ms | Allocations: 29)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1294)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3482)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.3ms | Allocations: 3829)
+
+
+Started GET "/posts/new" for ::1 at 2022-12-09 17:13:31 +0530
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 4.2ms | Allocations: 1013)
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1100)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3274)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 3617)
+
+
+Started POST "/posts" for ::1 at 2022-12-09 17:13:35 +0530
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"sddddd", "body"=>"ddddddddddddd"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sddddd"], ["body", "ddddddddddddd"], ["created_at", "2022-12-09 11:43:52.284267"], ["updated_at", "2022-12-09 11:43:52.284267"]]
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+[ActiveJob] Enqueued GuestsCleanupJob (Job ID: ab1e8cc7-5937-4305-afd4-8afea005044e) to Sidekiq(default) with arguments: #<GlobalID:0x00007fe668647098 @uri=#<URI::GID gid://blog/Post/25>>, ["ameersohailms@gmail.com", "ameer09981@gmail.com", "sumathichitra9597@gmail.com", "varijapatpal056@gmail.com", "varijapatpaljr@gmail.com"]
+Redirected to http://localhost:8000/posts/25
+Completed 302 Found in 16431ms (ActiveRecord: 3.5ms | Allocations: 4948)
+
+
+Started GET "/posts/25" for ::1 at 2022-12-09 17:13:52 +0530
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"25"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:81:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 702)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2974)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 3833)
+
+
+Started GET "/posts" for ::1 at 2022-12-09 17:18:35 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.3ms | Allocations: 272)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 18394)
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 53397)
+Completed 200 OK in 44ms (Views: 40.4ms | ActiveRecord: 0.4ms | Allocations: 60138)
+
+
+Started GET "/posts/new" for ::1 at 2022-12-09 17:18:36 +0530
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 7.8ms | Allocations: 3985)
+  Rendered posts/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 4330)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 6616)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 7144)
+
+
+Started POST "/posts" for ::1 at 2022-12-09 17:18:39 +0530
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"wwwwww", "body"=>"wwwwwwwww"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "wwwwww"], ["body", "wwwwwwwww"], ["created_at", "2022-12-09 11:48:56.609642"], ["updated_at", "2022-12-09 11:48:56.609642"]]
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+[ActiveJob] Enqueued GuestsCleanupJob (Job ID: 4db1b32d-b256-4a17-b2f1-458dbe76eecd) to Sidekiq(default) with arguments: #<GlobalID:0x00007f5fb0862240 @uri=#<URI::GID gid://blog/Post/26>>, ["ameersohailms@gmail.com", "ameer09981@gmail.com", "sumathichitra9597@gmail.com", "varijapatpal056@gmail.com", "varijapatpaljr@gmail.com"]
+Redirected to http://localhost:8000/posts/26
+Completed 302 Found in 16647ms (ActiveRecord: 3.1ms | Allocations: 7156)
+
+
+Started GET "/posts/26" for ::1 at 2022-12-09 17:18:56 +0530
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"26"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:81:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1014)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3287)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 6365)
+
+
+Started GET "/posts" for ::1 at 2022-12-09 17:19:58 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.4ms | Allocations: 272)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered posts/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 18516)
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | Allocations: 53367)
+Completed 200 OK in 42ms (Views: 38.4ms | ActiveRecord: 0.4ms | Allocations: 60108)
+
+
+Started GET "/posts/new" for ::1 at 2022-12-09 17:19:59 +0530
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 9.0ms | Allocations: 3979)
+  Rendered posts/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 4324)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 6615)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 7143)
+
+
+Started POST "/posts" for ::1 at 2022-12-09 17:20:02 +0530
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"aaaaaaaa", "body"=>"ssssssss"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "aaaaaaaa"], ["body", "ssssssss"], ["created_at", "2022-12-09 11:50:19.037935"], ["updated_at", "2022-12-09 11:50:19.037935"]]
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+[ActiveJob] Enqueued GuestsCleanupJob (Job ID: e50a6d44-4dc2-447a-b3e9-3d3fcd88306f) to Sidekiq(default) with arguments: #<GlobalID:0x00007fbd4c3b09a0 @uri=#<URI::GID gid://blog/Post/27>>, ["ameersohailms@gmail.com", "ameer09981@gmail.com", "sumathichitra9597@gmail.com", "varijapatpal056@gmail.com", "varijapatpaljr@gmail.com"]
+Redirected to http://localhost:8000/posts/27
+Completed 302 Found in 16502ms (ActiveRecord: 3.6ms | Allocations: 7162)
+
+
+Started GET "/posts/27" for ::1 at 2022-12-09 17:20:19 +0530
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"27"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:81:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered posts/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1028)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3301)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 6379)
+
+
+Started GET "/posts" for ::1 at 2022-12-09 17:20:34 +0530
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.2ms | Allocations: 19)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1511)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 3700)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms | Allocations: 4038)
+
+
+Started GET "/posts/new" for ::1 at 2022-12-09 17:20:35 +0530
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.9ms | Allocations: 1091)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1177)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3352)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 3693)
+
+
+Started POST "/posts" for ::1 at 2022-12-09 17:20:40 +0530
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"aaa", "body"=>"ssssssssssss"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "aaa"], ["body", "ssssssssssss"], ["created_at", "2022-12-09 11:50:57.131491"], ["updated_at", "2022-12-09 11:50:57.131491"]]
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+[ActiveJob] Enqueued GuestsCleanupJob (Job ID: c8ca3fae-2ec4-492b-b86e-505d38c3593f) to Sidekiq(default) with arguments: #<GlobalID:0x00007fbd4c7d9a18 @uri=#<URI::GID gid://blog/Post/28>>, ["ameersohailms@gmail.com", "ameer09981@gmail.com", "sumathichitra9597@gmail.com", "varijapatpal056@gmail.com", "varijapatpaljr@gmail.com"]
+Redirected to http://localhost:8000/posts/28
+Completed 302 Found in 16432ms (ActiveRecord: 3.3ms | Allocations: 3949)
+
+
+Started GET "/posts/28" for ::1 at 2022-12-09 17:20:57 +0530
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"28"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:81:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.3ms | Allocations: 22)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 699)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2965)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 3788)
+
+
+Started GET "/posts" for ::1 at 2022-12-09 17:27:24 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (cannot load such file -- jwt):
+  
+app/controllers/posts_controller.rb:1:in `<main>'
+Started GET "/posts" for ::1 at 2022-12-09 17:27:58 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.3ms | Allocations: 272)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered posts/_post.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 18770)
+  Rendered layout layouts/application.html.erb (Duration: 44.8ms | Allocations: 53869)
+Completed 200 OK in 50ms (Views: 45.8ms | ActiveRecord: 0.4ms | Allocations: 60608)
+
+
+Started GET "/posts/new" for ::1 at 2022-12-09 17:28:01 +0530
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 8.6ms | Allocations: 3977)
+  Rendered posts/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 4322)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 6613)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 7141)
+
+
+Started POST "/posts" for ::1 at 2022-12-09 17:28:07 +0530
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"sss", "body"=>"ssssssss"}, "commit"=>"Create Post"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3610)
+
+
+  
+NameError (undefined local variable or method `jwk_set' for #<PostsController:0x0000000000be50>):
+  
+app/controllers/posts_controller.rb:35:in `create'

@@ -1,8 +1,13 @@
+require 'jwt'
+require 'json/jwt'
+require 'json'
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
   # GET /posts or /posts.json
   def index
+
+    "test   from main"
     @posts = Post.all
   end
 
@@ -22,7 +27,15 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-
+    jwks_uri = 'https://saltire.lti.app/platform/jwks'
+    kid = '6ox0b5ag4w'
+    puts JSON::JWK::Set
+    puts JSON::JWK::Set
+    # ::Fetcher.cache = Rails.cache
+    # jwk_set = JSON::JWK::Set::Fetcher.fetch(jwks_uri, kid: kid)
+    puts "333333333333333333333333333333333333333"
+    puts jwk_set
+    puts "ddddddddddddddddxxxxxxxxxxxxxxxxxxxx"
     respond_to do |format|
       if @post.save
         puts "ddddddddddddddddddddddd"
@@ -32,7 +45,7 @@ class PostsController < ApplicationController
         # PostMailer.welcome_email(@post, "ameersohailms@gmail.com").deliver_now
         puts "fffffffffffffffffffffffffffffffffffggggggggggggggggg"
 
-        GuestsCleanupJob.perform_later(@post, users)
+        # GuestsCleanupJob.perform_later(@post, users)
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
       else
