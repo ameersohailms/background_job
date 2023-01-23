@@ -6,6 +6,8 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
+
+    "test   from main"
     @posts = Post.all
   end
 
