@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def index
 
     "test   from main"
+    "commit 2"
     @posts = Post.all
   end
 
