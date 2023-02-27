@@ -33,6 +33,19 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  if Rails.root.join('tmp/caching-dev.txt').exist?
+    config.action_controller.perform_caching = true
+    config.action_mailer.perform_caching = false
+    config.cache_store = :memory_store
+    config.public_file_server.headers = {
+      'Cache-Control' => 'public, max-age=172800'
+    }
+  else
+    config.action_controller.perform_caching = false
+    config.action_mailer.perform_caching = false
+    config.cache_store = :null_store
+  end
+
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 

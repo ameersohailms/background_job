@@ -4,7 +4,10 @@
 
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= render post %>
+    <% cache post do %>
+      <%= render post %>
+    <% end %>
+    <%#= render post %>
     <p>
       <%= link_to "Show this post", post %>
     </p>
